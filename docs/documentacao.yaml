@@ -1,0 +1,106 @@
+openapi: 3.0.3
+info:
+  title: API Ecommerce Senai
+  description: Essa api foi desenvolvida durante as aulas de programação para back-end.
+  version: 1.0.0
+
+servers:
+  url: http://localhost:5500
+  description: servidor local de testes
+
+paths:
+  /auth/login:
+    post:
+      summary: Faz o login do cliente e retorna um token JWT
+      requestBody:
+        require: true
+        content: 
+          application/json:
+            schema: object
+            properties: 
+              email:
+                type: string
+                format: email
+                example: usuario@exemplo.com
+              senha:
+                  type: string
+                  format: password
+                  example: senhaSegura123
+      responses:
+        '200':
+          description: sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: ok
+        '406':
+          description: email ou senha não válido
+        '404':
+          description: cliente não encontrado
+        '401':
+          description: senha inválida
+
+  /auth/logout:
+    post:
+      summary: Faz o logout do cliente
+      responses:
+        '200':
+          description: Sucesso
+  
+  /clientes:
+    post: 
+      summary: Cria um novo cliente
+      responses: 
+        '200':
+          description: OK
+    delete:
+      summary: Deleta clientes pelo ID
+      responses: 
+        '200':
+          description: OK
+    get:
+      summary: Lista os clientes cadastrados
+      responses:
+        '200':
+          description: OK
+    get:
+      summary: Pega o cliente pelo ID
+      responses:
+        '200':
+          description: OK
+    put:
+      summary: Atualiza dados de clientes pelo ID
+      responses:
+        '200':
+          description: OK
+
+  /produtos:
+    post:
+      summary: Cria um novo produto
+      responses: 
+        '200':
+          description: OK
+    delete:
+      summary: Deleta produto pelo ID
+      responses: 
+        '200':
+          description: OK
+    get:
+      summary: Lista os produtos cadastrados
+      responses:
+        '200':
+          description: OK
+    get:
+      summary: Pega o produto pelo ID
+      responses:
+        '200':
+          description: OK
+    put:
+      summary: Atualiza dados de produtos pelo ID
+      responses:
+        '200':
+          description: OK

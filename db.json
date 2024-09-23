@@ -1,0 +1,87 @@
+{
+    "produtos": [
+        {
+            "id": 2,
+            "nome": "Camisa azul com desenho de hashtag",
+            "descricao": "Controle Sem Fio Xbox Series - Branco",
+            "preco": 399,
+            "categoria_id": 2,
+            "imagem": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRfYZiOHoinl6yJsNKsIXFvyL7-mHyBwTuSRuP_eoLI34XJh3dmRsR9kgnGGDlxVk8z0sNmt1qt9Kz5ewPuxkASWFZ2NtE-uzxQ4Hcair_K3pQZtQQJoUuiHRQ8ciHNpQF2yM7s3c7hMQ&usqp=CAc"
+        },
+        {
+            "id": 3,
+            "nome": "Notebook",
+            "descricao": "Notebook top",
+            "preco": 5000,
+            "categoria_id": 3,
+            "imagem": "vaso_flores.jpg"
+        },
+        {
+            "nome": "celular",
+            "descricao": "Smartphone",
+            "preco": 1200,
+            "id": "36f188a0-e10a-4764-bf71-43c584fad528"
+        },
+        {
+            "nome": "Câmera 4k Ultra HD",
+            "descricao": "camera top",
+            "preco": 399.9,
+            "id": "e5255093-5c18-4f1f-83b1-93c5a71c6353"
+        }
+    ],
+    "clientes": [
+        {
+            "id": 2,
+            "nome": "update",
+            "email": "maria.oliveira@example.com",
+            "senha": "abcdef",
+            "endereco": {
+                "rua": "Rua das Flores",
+                "numero": 456,
+                "bairro": "Jardim",
+                "cidade": "Rio de Janeiro",
+                "estado": "RJ",
+                "cep": "98765-432"
+            }
+        },
+        {
+            "nome": "Robert Ocarlos",
+            "email": "robertao@gmail.com",
+            "senha": "$2a$10$IX/FNlM7Fkm9d/R8tIKn8ul.RO.EmeIKN5vTay4BH0w9KSpx9uBJi",
+            "id": "f3cd1ed4-178c-4f84-bd0a-d5c058e012ee"
+        }
+    ],
+    "pedidos": [
+        {
+            "id": 1,
+            "cliente_id": 1,
+            "data_pedido": "2022-01-01",
+            "status": "pendente",
+            "itens": [
+                {
+                    "produto_id": 1,
+                    "quantidade": 2,
+                    "preco_unitario": 1500
+                },
+                {
+                    "produto_id": 2,
+                    "quantidade": 1,
+                    "preco_unitario": 30
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "cliente_id": 2,
+            "data_pedido": "2022-01-15",
+            "status": "entregue",
+            "itens": [
+                {
+                    "produto_id": 3,
+                    "quantidade": 1,
+                    "preco_unitario": 50
+                }
+            ]
+        }
+    ]
+}
