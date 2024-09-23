@@ -12,6 +12,19 @@ paths:
   /auth/login:
     post:
       summary: Faz o login do cliente e retorna um token JWT
+      parameters:
+        - name: email
+          in: query
+          description: o email que o usuário fez o cadastro
+          required: true
+          schema:
+            type: string
+        - name: senha
+          in: query
+          description: a senha que o usuário fez o cadastro
+          required: true
+          schema:
+            type: string
       requestBody:
         require: true
         content: 
@@ -39,10 +52,34 @@ paths:
                     example: ok
         '406':
           description: email ou senha não válido
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  erro:
+                    type: string
+                    example: email ou senha não enviado
         '404':
           description: cliente não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: email não encontrado
         '401':
           description: senha inválida
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: A senha não é válida
 
   /auth/logout:
     post:
@@ -50,6 +87,14 @@ paths:
       responses:
         '200':
           description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: o usuário fez logout
   
   /clientes:
     post: 
